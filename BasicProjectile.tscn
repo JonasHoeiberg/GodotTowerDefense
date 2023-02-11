@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://BasicProjectile.gd" type="Script" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[node name="BasicProjectile" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color( 0.54902, 0.498039, 0.823529, 1 )
+scale = Vector2( 10, 10 )
+mesh = SubResource( 1 )
