@@ -8,6 +8,6 @@ func _unhandled_input(event):
 		
 	if (event is InputEventMouseButton && event.pressed):
 		var projectile = Projectile.instance()
-		projectile.position = $Tower.position
+		projectile.position = $Tower.get_tip()
 		projectile.direction = $Tower.direction
 		add_child(projectile)

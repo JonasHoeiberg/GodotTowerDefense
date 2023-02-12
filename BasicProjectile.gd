@@ -1,4 +1,6 @@
-extends StaticBody2D
+extends Area2D
+
+signal hit
 
 var speed = 50
 var direction = Vector2(1, 0)
@@ -8,4 +10,12 @@ func _ready():
 
 func _process(delta):
 	position += direction * speed * delta
-	print(position)
+
+func hit():
+	emit_signal('hit')
+	queue_free()
+	
+	
+
+func _on_BasicProjectile_area_entered(area):
+	hit()

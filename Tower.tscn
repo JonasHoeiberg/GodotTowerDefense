@@ -7,8 +7,10 @@
 [sub_resource type="CubeMesh" id=1]
 
 [node name="Tower" type="Node2D"]
-scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -6.0 ]
+}
 
 [node name="Base" type="MeshInstance2D" parent="."]
 modulate = Color( 0.278431, 0.278431, 0.278431, 1 )
@@ -18,10 +20,7 @@ mesh = SubResource( 2 )
 
 [node name="Canon" type="Node2D" parent="."]
 
-[node name="Tip" type="Position2D" parent="Canon"]
-position = Vector2( 20, 0 )
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Canon"]
+[node name="Barrel" type="MeshInstance2D" parent="Canon"]
 modulate = Color( 0.376471, 0.376471, 0.376471, 1 )
 position = Vector2( 10, 0 )
 scale = Vector2( 10, 1 )
