@@ -14,8 +14,6 @@ func _process(delta):
 func hit():
 	emit_signal('hit')
 	queue_free()
-	
-	
 
 func _on_BasicProjectile_area_entered(area):
 	hit()
