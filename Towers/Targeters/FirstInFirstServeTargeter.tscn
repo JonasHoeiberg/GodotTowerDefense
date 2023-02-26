@@ -3,7 +3,7 @@
 [ext_resource path="res://Towers/Targeters/FirstInFirstServeTargeter.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 363.012
+radius = 1.0
 
 [node name="MobTargeter" type="Area2D"]
 collision_layer = 0

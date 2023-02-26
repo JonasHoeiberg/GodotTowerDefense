@@ -5,9 +5,11 @@ signal target_changed
 var currentTarget: Node2D
 var potentialTargets = []
 
+func _ready():
+	setRange(400)
+
 func _on_MobTargeter_area_entered(area: Area2D):
 	var newTarget = area
-	newTarget.position = area.position
 	
 	potentialTargets.append(newTarget)
 	
@@ -24,9 +26,11 @@ func _on_MobTargeter_area_exited(area: Area2D):
 	)
 	
 	if potentialTargets.size() == 0:
-		emit_signal("target_changed", null)
-		return
-	
-	currentTarget = potentialTargets[0]
+		currentTarget = null
+	else:
+		currentTarget = potentialTargets[0]
 	
 	emit_signal("target_changed", currentTarget)
+
+func setRange(rangeValue: float):
+	$Range.shape.radius = rangeValue
