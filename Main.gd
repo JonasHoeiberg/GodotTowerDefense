@@ -17,11 +17,13 @@ func _input(event):
 		addTower(event.position)
 
 func addTower(towerPosition: Vector2):
-	print(towerPosition)
 	var tower = basicTowerType.instance()
-	tower.position = $GameGrid.snapPosition(towerPosition)
+	tower.position = towerPosition
+	tower.position = GameGrid.registerAndSnap(tower)
 	
 	add_child(tower)
+	
+	GameGrid.getGlobalPath(tower.position, Vector2())
 
 func addMob(position: Vector2):
 	var mob = mobType.instance()

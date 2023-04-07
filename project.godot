@@ -14,9 +14,17 @@ config/name="Babby's first tower defense"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameGrid="*res://GameGrid.gd"
+
 [display]
 
 window/size/height=1024
+
+[global]
+
+auto=false
 
 [gui]
 

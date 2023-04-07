@@ -37,7 +37,7 @@ func onHit(other):
 			
 func projectileHit(projectile):
 	health -= projectile.damage
-	
+	# TODO: Emit signal, parent should handle side effects
 	if health <= 0:
 		queue_free()
 
